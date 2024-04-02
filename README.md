@@ -21,3 +21,11 @@
       2. From the Applications dropdown, click Company.
       3. Navigate to Admin > Web services users.
       4. From the Web services users list, copy the required User ID. If the web service user is not added, click Add. For more information on how to add a user, see Add a web services user.
+
+  ### How to retrieve the company ID
+      1. Sign in to your Sage Intacct account.
+      2. From the Applications dropdown, click Company.
+      3. Navigate to Setup > Configuration > Company > General information.
+      4. From the Company Information section, copy ID.
+
+  
