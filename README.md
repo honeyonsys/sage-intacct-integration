@@ -1,5 +1,6 @@
 
 # Sage Intacct Integration
+The implementation of this application is done by taking reference from the official sage intacct documentation [(php sdk)](https://developer.intacct.com/tools/sdk-php/)
 
 ## Prerequisites
 
