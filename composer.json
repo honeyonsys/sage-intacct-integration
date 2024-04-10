@@ -3,7 +3,8 @@
     "description": "posting data to sage intacct entities and modules\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dfetching financial data from excel sheets and post to sage intacct modules",
     "type": "project",
     "require": {
-        "intacct/intacct-sdk-php": "^3.2"
+        "monolog/monolog": "^3.5",
+    "ext-json": "*"
     },
     "autoload": {
         "psr-4": {

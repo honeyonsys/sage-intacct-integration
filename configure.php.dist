@@ -1,0 +1,25 @@
+<?php
+
+$loader = require __DIR__ . '/vendor/autoload.php';
+
+use Monolog\Level;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+use Monolog\Handler\FirePHPHandler;
+
+// Create the logger
+$logger = new Logger('my_logger');
+// Now add some handlers
+$logFilePath = __DIR__ . '/logs/' . date('dmY') . '.log';
+$logger->pushHandler(new StreamHandler($logFilePath, Level::Debug));
+$logger->pushHandler(new FirePHPHandler());
+
+//Sage Intacct Credentials
+$sageintacct_api_url = 'https://api.intacct.com/ia/xml/xmlgw.phtml';
+$sender_id = 'YOUR SAGE INTACCT SENDER ID'; 
+$sender_password = 'YOUR SAGE INTACCT SENDER PASSWORD';
+$company_id = 'YOUR SAGE INTACCT COMPANY ID'; 
+$user_id = 'YOUR SAGE INTACCT WEB SERVICES USER'; // you need to create this in the company -> web services user
+$user_password = 'YOUR SAGE INTACCT WEB SERVICE USER PASSWORD';
+$control_id = date('mdYhis');
+$global_session_id = ''; //populate this after getting session id after running getsessionid.php
