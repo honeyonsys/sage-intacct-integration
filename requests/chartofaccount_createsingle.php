@@ -51,33 +51,4 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 curl_close($curl);
 
-// Parse the XML response
-$xmlRes = simplexml_load_string($response);
-
-// Log message if the control status is success
-if ($xmlRes->control->status == 'success') {
-    $logger->info('Request posted successfully');
-    echo 'Request posted successfully <br>';
-}
-
-// Log message if the authentication status is success
-if ($xmlRes->operation->authentication->status == 'success') {
-    $userId = (string) $xmlRes->operation->authentication->userid;
-    $logger->info("Authentication successful for user: $userId");
-    echo 'Authentication successful for user: '.$userId.'<br>';
-}
-
-// Log error messages if the result status is failure
-if ($xmlRes->operation->result->status == 'failure') {
-    foreach ($xmlRes->operation->result->errormessage->error as $error) {
-        $errorNo = (string) $error->errorno;
-        $description = (string) $error->description;
-        $logger->error("Error $errorNo: $description");
-        echo "Error $errorNo: $description<br>";
-    }
-} elseif ($xmlRes->operation->result->status == 'success') {
-    $recordNo = (string) $xmlRes->operation->result->data->glaccount->RECORDNO;
-    $accountNo = (string) $xmlRes->operation->result->data->glaccount->ACCOUNTNO;
-    $logger->info("Account created successfully. Record No: $recordNo, Account No: $accountNo");
-    echo "Account created successfully. Record No: $recordNo, Account No: $accountNo <br>";
-}
+responseHandler($response);
