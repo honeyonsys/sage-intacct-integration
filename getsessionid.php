@@ -55,6 +55,5 @@ $xmlRes = simplexml_load_string($response);
 $sessionId = (string) $xmlRes->operation->result->data->api->sessionid;
 
 $msgOutput = 'Generated Session Id: ' . $sessionId;
-// Log the session id
-$logger->info($msgOutput);
+
 echo $msgOutput;
